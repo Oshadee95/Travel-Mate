@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5a7fd3a0-4418-4e61-85e7-367a3632e1b1">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString>
+		<![CDATA[SELECT `hotel_id` AS 'RID',`name` AS 'RNAME', `address` AS 'RADDRESS', DATE(`reg_date`) AS 'RREGDATE' FROM `hotel10` WHERE `part` = 'Restaurant']]>
+	</queryString>
+	<field name="RID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="RID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hotel10"/>
+	</field>
+	<field name="RNAME" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="RNAME"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hotel10"/>
+	</field>
+	<field name="RADDRESS" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="RADDRESS"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hotel10"/>
+	</field>
+	<field name="RREGDATE" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="RREGDATE"/>
+	</field>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="d83e9a8f-7cea-4d78-a301-b40f987ae590"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="a67d087a-8226-4201-873e-0cb01c53b8db"/>
+					<textElement>
+						<font fontName="Lato" size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[ECO Travels]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="395" y="43" width="180" height="20" forecolor="#FFFFFF" uuid="546f0b2a-dd33-4a7e-ac65-4c49d796c7c6"/>
+					<textElement textAlignment="Right">
+						<font fontName="Lato" size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Restaurant Registrations]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="138" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="36f50ed9-de0d-421d-8db1-d095533ef970"/>
+				<textElement>
+					<font fontName="Lato" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="112" y="0" width="126" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="a8f5352e-941f-4dbf-b003-de2b9174f425"/>
+				<textElement>
+					<font fontName="Lato" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="234" y="0" width="142" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="ced5b8b0-1468-4e82-894d-8cccbb58cc6a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Lato" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ADDRESS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="376" y="0" width="179" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="9e892138-6e2c-40e8-b17c-53e2a67a7341"/>
+				<textElement textAlignment="Center">
+					<font fontName="Lato" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REG ON]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="817e2fa8-df17-42cf-bfe9-400d7364c178"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="112" height="20" uuid="6b5fac7c-aff4-432c-88f2-c4077d734d85"/>
+				<textElement>
+					<font fontName="Lato" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{RID}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="112" y="0" width="138" height="20" uuid="81f57c82-3846-40fa-ae8c-4f828d8a6083"/>
+				<textElement>
+					<font fontName="Lato" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{RNAME}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="250" y="0" width="143" height="20" uuid="2a21af4d-e24f-47c6-87ed-df2a96a0f8a1"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Lato" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{RADDRESS}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="MMMMM dd, yyyy">
+				<reportElement x="393" y="0" width="159" height="20" uuid="19178cb1-2b47-4d52-9c5d-20820be94e9d"/>
+				<textElement textAlignment="Left">
+					<font fontName="Lato" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{RREGDATE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="0e759865-a728-445d-973b-564a486f7893"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="652dcfa2-c0a8-49f1-95c9-3414e2a0f0ab"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="82387d71-5095-464b-b959-5972def38894"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

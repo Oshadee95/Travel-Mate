@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5cd597d6-a263-4e41-b31c-77c06c8e03d5">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT `Date`,`Department`,`Business_name`, SUM(`Amount`) AS 'Amount' FROM `bad_debts` WHERE MONTH(`Date`) = '03' AND YEAR(`Date`) = '2019' GROUP BY `Business_name` ]]>
+	</queryString>
+	<field name="Date" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Department" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Business_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Amount" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="47561a75-2021-4277-9a1f-1ab977797e31"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="52356282-f2d7-4c06-95f2-71227f8fc554"/>
+					<textElement>
+						<font fontName="Lato" size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[ECO Travels]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="395" y="43" width="180" height="20" forecolor="#FFFFFF" uuid="2add2f31-b93b-46d9-9da6-ac3fa1fa1a70"/>
+					<textElement textAlignment="Right">
+						<font fontName="Lato" size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Bad Debts Report]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="23">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="138" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="c0e5caa9-b369-4cb4-8810-af3e653f4102"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Lato" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="138" y="0" width="138" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="f28fadf4-29af-4cde-a23f-48088ac7729f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Lato" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Department]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="276" y="0" width="138" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="0e8c3e96-92a9-4c01-bf86-3d3e67106979"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Lato" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Business_name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="414" y="0" width="138" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="7ec7831d-9d4d-417e-a68f-2e4be260ce6d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Lato" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="f9d26b45-180d-44b4-8e78-200b1e64560c"/>
+			</line>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy">
+				<reportElement x="0" y="0" width="138" height="20" uuid="0f0e9232-650e-487f-a764-898887ac5b22"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Lato" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Date}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="169" y="0" width="126" height="20" uuid="05f686ac-c2d4-44e8-b4b5-38f2d02cabbf"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lato" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Department}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="430" y="0" width="122" height="20" uuid="62689554-2c01-44e1-9408-93ca74aa5187"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Lato" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Amount}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="295" y="0" width="135" height="20" uuid="9b8f7c3b-f172-4964-9e01-8b4ed7b58742"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Lato" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Business_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="79cca643-11f0-463f-9915-523feb1b227c"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="88cfd328-b18f-4a66-ba45-fe524165b2f5"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="37cd1618-d034-4f9d-9251-7c9658acd258"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
